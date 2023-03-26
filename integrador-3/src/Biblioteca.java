@@ -7,6 +7,7 @@ public class Biblioteca {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		MockLivros.popularDados(listaDeLivros, autores);
 
 		while (true) {
 			System.out.println("Menu de opções:");
