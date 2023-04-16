@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Objects;
 
 public class Livro {
 	private String titulo;
@@ -53,6 +54,37 @@ public class Livro {
 
 	public void setAnoPublicacao(int anoPublicacao) {
 		this.anoPublicacao = anoPublicacao;
+	}
+
+	@Override
+	public String toString() {
+
+		String autor = "";
+		if (autores.size() == 1) {
+			autor = "Autor: " + autores.get(0).toString();
+		} else if (autores.size() > 1) {
+			autor = "Autores: " + autores.get(0).toString();
+			for (int i = 1; i < autores.size(); i++) {
+				autor += autores.get(i).toString();
+			}
+		}
+
+		return "Livro: " + titulo + ", publicado em: " + anoPublicacao + ", pela editora: "
+				+ editora + "\n" + autor + "\n";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		Livro outroLivro = (Livro) obj;
+		return anoPublicacao == outroLivro.anoPublicacao &&
+				Objects.equals(titulo, outroLivro.titulo) &&
+				Objects.equals(isbn, outroLivro.isbn);
 	}
 
 }
