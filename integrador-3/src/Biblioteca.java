@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Exceptions.ExcecaoDeLivroJaExistente;
+
 public class Biblioteca {
 	private static ListaDeLivros listaDeLivros = new ListaDeLivros();
 	private static ArrayList<Autor> autores = new ArrayList<>();
@@ -74,8 +76,13 @@ public class Biblioteca {
 		}
 
 		Livro livro = new Livro(titulo, isbn, autoresLivro, editora, anoPublicacao);
-		listaDeLivros.incluirNoFim(livro);
-		System.out.println("Livro cadastrado com sucesso!");
+
+		try {
+			listaDeLivros.incluirNoFim(livro);
+			System.out.println("Livro cadastrado com sucesso!");
+		} catch (ExcecaoDeLivroJaExistente e) {
+			System.out.println("Erro ao cadastrar livro: " + e.getMessage());
+		}
 	}
 
 	private static void cadastrarAutor(Scanner scanner) {
@@ -86,6 +93,14 @@ public class Biblioteca {
 		String paisOrigem = scanner.nextLine();
 
 		Autor autor = new Autor(nome, paisOrigem);
+
+		for (Autor a : autores) {
+			if (a.equals(autor)) {
+				System.out.println("Autor já cadastrado.");
+				return;
+			}
+		}
+
 		autores.add(autor);
 		System.out.println("Autor cadastrado com sucesso!");
 	}
@@ -104,7 +119,7 @@ public class Biblioteca {
 			case 1:
 				listaDeLivros.ordenar();
 				for (int i = 0; i < listaDeLivros.tamanho(); i++) {
-					System.out.println(listaDeLivros.get(i).getTitulo());
+					System.out.println(listaDeLivros.get(i).toString());
 				}
 				break;
 			case 2:
@@ -114,7 +129,7 @@ public class Biblioteca {
 				for (int i = 0; i < listaDeLivros.tamanho(); i++) {
 					Livro livro = listaDeLivros.get(i);
 					if (livro.getAutores().stream().anyMatch(autor -> autor.getNome().equalsIgnoreCase(nomeAutor))) {
-						System.out.println(livro.getTitulo());
+						System.out.println(livro.toString());
 					}
 				}
 				break;
@@ -127,7 +142,7 @@ public class Biblioteca {
 				for (int i = 0; i < listaDeLivros.tamanho(); i++) {
 					Livro livro = listaDeLivros.get(i);
 					if (livro.getAnoPublicacao() >= inicioIntervalo && livro.getAnoPublicacao() <= fimIntervalo) {
-						System.out.println(livro.getTitulo());
+						System.out.println(livro.toString());
 					}
 				}
 				break;
@@ -138,10 +153,7 @@ public class Biblioteca {
 				for (int i = 0; i < listaDeLivros.tamanho(); i++) {
 					Livro livro = listaDeLivros.get(i);
 					if (livro.getTitulo().toLowerCase().contains(busca.toLowerCase())) {
-						System.out.println("Título: " + livro.getTitulo());
-						System.out.println("Autor(es): " + livro.getAutores());
-						System.out.println("Editora: " + livro.getEditora());
-						System.out.println();
+						System.out.println(livro.toString());
 					}
 				}
 				break;
