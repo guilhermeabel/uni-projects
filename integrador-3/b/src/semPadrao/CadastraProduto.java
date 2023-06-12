@@ -111,8 +111,11 @@ public class CadastraProduto extends JFrame implements ActionListener {
 
 		// c.conn = c.getConnection("org.postgresql.Driver",
 		// "jdbc:postgresql://localhost:5432/Solid", "postgres", "postgres");
-		c.conn = c.getConnection("org.hsqldb.jdbc.JDBCDriver", "jdbc:hsqldb:hsql://localhost/solid", "SA",
-				"");
+		c.conn = c.getConnection(
+				"org.postgresql.Driver",
+				"jdbc:postgresql://localhost:5432/ProjIntegrador",
+				"postgres",
+				"1234");
 		c.setVisible(true);
 
 	}
