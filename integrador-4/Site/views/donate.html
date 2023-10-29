@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body class="donate-body">
+    <section class="form-container">
+        <a href="../index.html"><img src="../img/web-house.png" alt="Home"></a>
+        <h2>4Patas - Doação</h2>
+            <p id="fill-text">Prencha seus dados pessoais e escolha a forma de doar que melhor se encaixa para você!</p>
+            <form action="#" method="post" name="donate-form">
+                <p>
+                    <label for="name">Nome:</label>
+                    <input type="text" name="name" placeholder="Seu nome" required>
+                </p>
+                <p>
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" placeholder="Seu e-mail" required>
+                </p>
+                <p>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" name="cpf" placeholder="Seu CPF" minlength="11" maxlength="11" required>    
+                </p>
+                <p>
+                    <label for="address">Endereço:</label>
+                    <input type="text" name="address" placeholder="Seu endereço" required>    
+                </p>
+                <p>
+                    <label for="number">Número:</label>
+                    <input type="number" name="number" placeholder="Número" required>    
+                </p>
+                <p>
+                    <label for="complement">Complemento:</label>
+                    <input type="text" name="complement" placeholder="Complemento (opcional)">    
+                </p>
+                <p>
+                    <label for="neighborhood">Bairro:</label>
+                    <input type="text" name="neighborhood" placeholder="Seu bairro" required>    
+                </p>
+                <p>
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" name="phone" placeholder="Seu telefone (opcional)" minlength="11" maxlength="11">    
+                </p>
+                <label for="donation-method">Escolha a forma de doação:</label>
+                <input type="radio" name="donation-method" value="pix" checked><label>Pix</label>
+                <input type="radio" name="donation-method" value="credit-card"><label>Cartão de Crédito</label>
+                <input type="radio" name="donation-method" value="paypal"><label>Paypal</label>
+                <input type="radio" name="donation-method" value="bank-transfer"><label>Transferência bancária</label>
+                <input type="radio" name="donation-method" value="ticket"><label>Boleto</label>
+                <p><input type="submit" value="Próximo"></p>
+            </form>
+    </section>
+    </main>
+    <footer id="donation-footer">
+        <p>2023 Instituição 4Patas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
