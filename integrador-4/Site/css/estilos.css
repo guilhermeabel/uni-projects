@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
 body,
 textarea {
 	margin: 0;
 	padding: 0;
-	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 .navbar-container {
