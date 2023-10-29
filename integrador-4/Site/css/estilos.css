@@ -60,7 +60,7 @@ nav {
 	max-width: 100vw;
 	background-position: top;
 	background-size: cover;
-	padding: 10em;
+	padding: 10%;
 	position: relative;
 }
 
@@ -103,7 +103,8 @@ nav {
 }
 
 .pets-img {
-	width: 450px;
+	width: 100%;
+	max-width: 450px;
 	border-radius: 15px;
 	box-shadow: 2px 2px 3px #000;
 }
@@ -142,6 +143,7 @@ nav {
 .banner {
 	display: flex;
 	justify-content: space-evenly;
+	overflow: hidden;
 }
 
 .banner-img {
@@ -182,21 +184,34 @@ nav {
 .informations {
 	padding: 3em;
 	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/description-and-address.jpg);
-	height: 325px;
+	min-height: 325px;
 	display: flex;
-}
 
-.description-and-address {
-	width: 50%;
 	color: white;
 	font-size: 20px;
-	text-align: left;
 	padding: 25px;
 	line-height: 30px;
 }
 
-.description-and-address:last-child {
+.description {
+	width: 50%;
+	text-align: left;
+}
+
+.address {
+	width: 50%;
 	text-align: right;
+}
+
+@media (max-width: 765px) {
+	.informations {
+		flex-direction: column;
+	}
+
+	.description,
+	.address {
+		width: 100%;
+	}
 }
 
 footer {
