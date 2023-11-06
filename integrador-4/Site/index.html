@@ -7,20 +7,49 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="./css/estilos.css">
 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 	<title>4Patas</title>
 </head>
 
 <body>
-	<div class="container">
-		<div class="navbar-container">
-			<nav>
-				<a href="#"><img class="logo" src="img/logo.png"></a>
-				<ul class="navbar-items">
-					<li><a href="./views/donate.html" class="donate-btn">Doar $</a></li>
+	<nav class="navbar navbar-expand-lg ">
+		<div class="container-xl">
+			<a class="navbar-brand" href="#">
+				<img src="img/logo.png" alt="Logo" width="50" class="d-inline-block me-3">
+				<b>4Patas</b></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-control"
+				aria-controls="navbar-control" aria-expanded="false" aria-label="Navegar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse p-3 bg-white" id="navbar-control">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#">Início</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Nossos pets</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">Quem somos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Voluntários</a>
+					</li>
+
 				</ul>
-			</nav>
+				<div class="d-lg-flex col-lg-3 justify-content-lg-end">
+					<a href="views/donate.html" class="btn donation">Faça uma doação</a>
+				</div>
+			</div>
 		</div>
-		<main>
+	</nav>
+
+	<div class="content">
+		<div class="main container">
 			<div class="main-banner">
 				<h1>4Patas</h1>
 				<p>Seja bem-vindo!</p>
@@ -30,44 +59,74 @@
 					animais abandonados, abusados ou em perigo, enquanto promovemos a conscientização sobre a
 					importância da adoção responsável.</p>
 			</div>
-			<section class="adoption-container">
-				<h2>Adote um de nossos pets!</h1>
+
+			<div class="row mt-5">
+				<section class="adoption-container">
+					<h3>Adote um de nossos pets!</h3>
 					<p>Escolha o bichinho perfeito pra você.</p>
-					<div class="pets-container">
-						<div class="pet">
-							<img src="./img/toby.png" alt="Toby" class="pets-img">
-							<p class="pet-description">Conheça o nosso amigável <strong>Toby</strong> que está em busca
-								de um
-								lar amoroso:</p>
-							<p class="pet-age"><strong>Idade: </strong>3 anos</p>
-							<p class="pet-story"><strong>História: </strong>Este pequeno cãozinho tem uma história
+				</section>
+				<div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+					<div class="card">
+						<img src="./img/toby.png" class="card-img-top" alt="Toby">
+						<div class="card-body">
+							<h5 class="card-title">Toby</h5>
+							<p class="card-text">Este pequeno cãozinho tem uma história
 								incrível de superação. Resgatado de
 								situações difíceis, ele está pronto para encontrar um lar onde possa desfrutar do amor e
-								da segurança que merece.
-								Dê a este pequeno amigo peludo a oportunidade de uma vida feliz e segura. A adoção de um
-								cachorro pode transformar sua vida!</p>
+								da segurança que merece. Dê a este pequeno amigo peludo a oportunidade de uma vida feliz
+								e
+								segura!</p>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item"><b>Idade</b>: 3 anos</li>
+								<li class="list-group-item"><b>Porte</b>: pequeno</li>
+								<li class="list-group-item"></li>
+							</ul>
+							<a href="#" class="btn donation">Conhecer</a>
 						</div>
-						<div class="pet">
-							<img src="./img/mia-and-sasha.png" alt="Mia e Sasha" class="pets-img">
-							<p class="pet-description">Conheça nossas adoráveis amigas felinas <strong>Mia e
-									Sasha</strong> que estão procurando um lar amoroso:</p>
-							<p class="pet-age"><strong>Idade: </strong>2 e 3 anos</p>
-							<p class="pet-story"><strong>História: </strong>Estes dois gatinhos incrivelmente fofos
-								foram resgatados em circunstâncias desafiadoras e agora estão ansiosos para encontrar
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+					<div class="card">
+						<img src="./img/kim.png" class="card-img-top" alt="Kim">
+						<div class="card-body">
+							<h5 class="card-title">Kim</h5>
+							<p class="card-text">
+								Este adorável cãozinho foi resgatado das ruas, onde enfrentou vários desafios.
+								Ele adora brincar e correr e está pronto para encontrar um lar repleto de carinho e
+								cuidados. Ajude-nos a dar a este lindo
+								cãozinho uma segunda chance.
+							</p>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item"><b>Idade</b>: 1 ano e 7 meses</li>
+								<li class="list-group-item"><b>Porte</b>: médio</li>
+								<li class="list-group-item"></li>
+							</ul>
+							<a href="#" class="btn donation">Conhecer</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+					<div class="card">
+						<img src="./img/mia-and-sasha.png" class="card-img-top" alt="Mia&Sasha">
+						<div class="card-body">
+							<h5 class="card-title">Mia e Sasha</h5>
+							<p class="card-text">Estas duas gatinhas incrivelmente fofas
+								foram resgatadas em circunstâncias desafiadoras e agora estão ansiosas para encontrar
 								uma casa onde possam desfrutar de carinho e cuidados.
-								Adote este par adorável de gatinhos e traga ainda mais alegria à sua vida. Dois gatos
+								Adote este par adorável de gatinhas e traga ainda mais alegria à sua vida. Dois gatos
 								são sempre melhor que um!</p>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item"><b>Idade</b>: 2 e 3 anos</li>
+								<li class="list-group-item"><b>Porte</b>: pequeno</li>
+								<li class="list-group-item"></li>
+							</ul>
+							<a href="#" class="btn donation">Conhecer</a>
 						</div>
-						<div class="pet">
-							<img src="./img/kim.png" alt="Kim" class="pets-img">
-							<p class="pet-description">Conheça o nosso amigo <strong>Kim </strong>de quatro patas que
-								está em busca de um lar amoroso:</p>
-							<p class="pet-age"><strong>Idade: </strong>1 ano e 7 meses</p>
-							<p class="pet-story"><strong>História: </strong>Este adorável cãozinho foi resgatado das
-								ruas, onde enfrentou desafios e incertezas. Agora, ele está pronto para recomeçar a vida
-								ao seu lado. Ajude-nos a dar a este cãozinho uma segunda chance na vida. Adote, não
-								compre!</p>
-						</div>
+					</div>
+				</div>
+			</div>
+
 			</section>
 			<section class="banners-container">
 				<div class="banner">
@@ -77,28 +136,36 @@
 					<img src="./img/banner-four.jpg" alt="Gato dormindo" class="banner-img">
 					<img src="./img/banner-five.jpg" alt="Gato dormindo" class="banner-img">
 				</div>
-				<p>Ajude-nos a dar a estes pets uma segunda chance na vida. Adote, não compre!</p>
+
+				<p>
+					<a href="#" class="btn donation">Veja mais</a>
+				</p>
+
 			</section>
 			<section class="mission-and-values">
-				<h2>Nossa missão:</h2>
+				<h3>Missão</h3>
 				<ol>
-					<li><strong>Resgate e Reabilitação:</strong> Trabalhamos incansavelmente para resgatar animais em
+					<li><strong>Resgate e Reabilitação:</strong> Trabalhamos incansavelmente para resgatar animais
+						em
 						situações de risco,
-						oferecendo cuidados médicos, nutrição adequada e um ambiente seguro. Acreditamos que todos os
+						oferecendo cuidados médicos, nutrição adequada e um ambiente seguro. Acreditamos que todos
+						os
 						animais merecem uma segunda chance.</li>
 					<li><strong>Promoção da Adoção Responsável:</strong> Estamos comprometidos em encontrar lares
 						amorosos e permanentes
 						para nossos resgatados. Fornecemos a cada adotante potencial informações e orientações para
-						garantir que a adoção seja uma experiência positiva tanto para o animal quanto para a família.
+						garantir que a adoção seja uma experiência positiva tanto para o animal quanto para a
+						família.
 					</li>
 					<li><strong>Conscientização e Educação:</strong> Acreditamos que a educação é fundamental para
 						promover uma comunidade mais compassiva em relação
-						aos animais. Oferecemos programas educacionais e recursos para incentivar a adoção responsável,
+						aos animais. Oferecemos programas educacionais e recursos para incentivar a adoção
+						responsável,
 						a esterilização e a prevenção do abuso de animais.</li>
 				</ol>
 			</section>
 			<section class="mission-and-values">
-				<h2>Nossos valores</h2>
+				<h3>Valores</h3>
 				<ul>
 					<li><strong>Amor e Respeito:</strong> Tratamos cada animal com amor, respeito e compaixão,
 						independentemente de sua
@@ -106,41 +173,57 @@
 					<li><strong>Transparência:</strong> Valorizamos a transparência em todas as nossas ações e nos
 						relacionamentos com
 						nossos apoiadores, voluntários e adotantes.</li>
-					<li><strong>Dedicação:</strong> Estamos comprometidos com a causa do resgate de animais e dedicamos
+					<li><strong>Dedicação:</strong> Estamos comprometidos com a causa do resgate de animais e
+						dedicamos
 						nosso tempo e
 						esforço para garantir o bem-estar dos animais sob nossa responsabilidade.</li>
-					<li><strong>Comunidade:</strong> Acreditamos no poder da comunidade para criar mudanças positivas e
+					<li><strong>Comunidade:</strong> Acreditamos no poder da comunidade para criar mudanças
+						positivas e
 						trabalhamos em
 						parceria com pessoas e organizações que compartilham nossa missão.</li>
 				</ul>
 			</section>
-		</main>
-		<section class="informations">
-			<div class="description">
-				<p> A 4Patas está comprometida em fazer a diferença na vida dos animais necessitados. Ajude-nos a
-					construir um futuro mais brilhante para eles.<br><br>Se você estiver interessado em apoiar nossa
-					missão,
-					adotar um animal ou fazer parte de nossa equipe
-					de voluntários, entre em contato conosco.<br><br>
-					Juntos, podemos criar um mundo mais compassivo para todos
-					os seres vivos.</p>
+			<div id="about" class="container text-center">
+				<h3>Quem Somos</h3>
+				<div class="row">
+					<div class="col description">
+						<p> A 4Patas está comprometida em fazer a diferença na vida dos animais necessitados. Ajude-nos
+							a
+							construir um futuro mais brilhante para eles.<br><br>Se você estiver interessado em apoiar
+							nossa
+							missão,
+							adotar um animal ou fazer parte de nossa equipe
+							de voluntários, entre em contato conosco.<br><br>
+							Juntos, podemos criar um mundo mais compassivo para todos
+							os seres vivos.</p>
+					</div>
+					<div class="col address">
+						<p>Informações de Contato:<br><br>
+							Endereço da Sede:<br>
+							Rua dos Animais Felizes<br>
+							Bairro dos Amigos dos Animais<br>
+							Cidade dos Peludos, PA<br>
+							CEP: 12345-678<br>
+							Telefone: (123) 456-7890<br>
+							E-mail: contato@instituicaoresgateanimais.org
+						</p>
+					</div>
+				</div>
+
+
+
+
+				</section>
+
 			</div>
-			<div class="address">
-				<p>Informações de Contato:<br><br>
-					Endereço da Sede:<br>
-					Rua dos Animais Felizes<br>
-					Bairro dos Amigos dos Animais<br>
-					Cidade dos Peludos, PA<br>
-					CEP: 12345-678<br>
-					Telefone: (123) 456-7890<br>
-					E-mail: contato@instituicaoresgateanimais.org
-				</p>
-			</div>
-		</section>
+		</div>
 		<footer>
-			<p>2023 Instituição 4Patas. Todos os direitos reservados.</p>
+			2023 Instituição 4Patas. Todos os direitos reservados.
 		</footer>
-	</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"></script>
+
 </body>
 
 </html>

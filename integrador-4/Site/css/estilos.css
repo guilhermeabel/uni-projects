@@ -1,60 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
-body,
-textarea {
-	margin: 0;
-	padding: 0;
+body {
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
-.navbar-container {
-	width: 100%;
-	height: 120px;
-	padding: 0px 2em;
-	position: relative;
-	background-color: #f1b4bb;
-	box-sizing: border-box;
-}
-
-.logo {
-	width: 90px;
-	margin-top: 15px;
-}
-
-nav {
-	position: relative;
-}
-
-.navbar-items {
-	list-style: none;
-	position: absolute;
-	display: inline-block;
-	line-height: 120px;
-	margin: 0px;
-	right: 0px;
-}
-
-.navbar-items li {
-	display: inline-block;
-	margin-left: 25px;
-}
-
-.navbar-items li a {
-	text-decoration: none;
-	transition: 0.5s;
-}
-
-.donate-btn {
-	padding: 15px 20px;
+body > .content {
 	background-color: #fdf0f0;
-	border-radius: 30px;
-	border: 1px solid black;
-	font-weight: bold;
 }
 
-.donate-btn:hover {
-	background-color: #fff;
-	color: black;
+textarea {
+	margin: 0;
+	padding: 0;
+}
+
+nav.navbar {
+	width: 100%;
+	height: 80px;
+	padding: 0px 2em;
+	position: fixed;
+	background-color: white;
+	box-sizing: border-box;
+	z-index: 100;
+}
+
+.main {
+	padding-top: 80px;
+}
+
+.btn.donation {
+	color: white;
+	background-color: #d15261;
+	border: 1px solid white;
+	border-radius: 25px;
+	padding: 10px 20px;
+}
+
+.btn.donation:hover {
+	background-color: #fdf0f0;
+	border: 1px solid #d15261;
+	color: #d15261;
+}
+
+.card-img-top {
+	height: 250px;
+	object-fit: cover;
 }
 
 .main-banner {
@@ -136,15 +125,10 @@ nav {
 	font-size: 18px;
 }
 
-.banners-container {
-	background-color: #fdf0f0;
-	padding: 5em;
-	border-bottom: 1px solid silver;
-}
-
 .banner {
+	margin-top: 50px;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	overflow: hidden;
 }
 
@@ -152,20 +136,21 @@ nav {
 	width: 200px;
 	height: 150px;
 	border-radius: 15px;
-	box-shadow: 1px 1px 2px #000;
+	border: 1px solid rgba(0, 0, 0, 0.175);
+	object-fit: cover;
 }
 
 .banners-container p {
 	margin-top: 50px;
+	margin-bottom: 100px;
 	text-align: center;
 	font-size: 28px;
-	font-weight: bold;
 }
 
 .mission-and-values {
-	padding: 3em;
-	border-bottom: 1px solid silver;
-	background-image: url(../img/white-wallpaper.jpg);
+	padding: 5em 3em;
+
+	background-color: white;
 }
 
 .mission-and-values:last-child {
@@ -184,12 +169,10 @@ nav {
 }
 
 .informations {
-	padding: 3em;
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/description-and-address.jpg);
 	min-height: 325px;
 	display: flex;
 
-	color: white;
+	color: black;
 	font-size: 20px;
 	padding: 25px;
 	line-height: 30px;
@@ -218,8 +201,16 @@ nav {
 
 footer {
 	text-align: center;
-	font-weight: bold;
-	line-height: 50px;
+	padding: 20px;
+
+	margin-top: -15px;
+
+	background-color: #d15261;
+	color: white;
+}
+
+#about {
+	padding: 6em 3em;
 }
 
 .donate-body {
@@ -244,9 +235,8 @@ footer {
 	cursor: pointer;
 }
 
-.form-container h2 {
+h3 {
 	text-align: center;
-	text-shadow: 1px 1px 1px black;
 }
 
 #fill-text {
