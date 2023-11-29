@@ -202,9 +202,7 @@ nav.navbar {
 footer {
 	text-align: center;
 	padding: 20px;
-
 	margin-top: -15px;
-
 	background-color: #d15261;
 	color: white;
 }
@@ -215,6 +213,10 @@ footer {
 
 .donate-body {
 	background-image: url(../img/donate-background.jpg);
+}
+
+#donation-footer {
+	background-color: transparent;
 }
 
 .form-container {
@@ -233,6 +235,10 @@ footer {
 
 .form-container a:hover {
 	cursor: pointer;
+}
+
+.form-container h2 {
+	text-align: center;
 }
 
 h3 {
@@ -259,17 +265,4 @@ h3 {
 	cursor: pointer;
 	background-color: white;
 	border: 1px solid black;
-}
-
-#donation-footer {
-	background-color: #fdf0f0;
-}
-
-@media screen and (max-width: 1100px) {
-}
-
-@media screen and (max-width: 900px) {
-}
-
-@media screen and (max-width: 576px) {
 }
