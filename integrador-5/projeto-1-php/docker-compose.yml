@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build: ./
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - mysql
+    extra_hosts:
+        host.docker.internal: host-gateway
+  mysql:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DB_NAME:-projeto_db}
+      MYSQL_USER: ${MYSQL_DB_USER:-user_db}
+      MYSQL_PASSWORD: ${MYSQL_DB_PASSWORD:-password}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_password}
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+      - ./my.cnf:/etc/mysql/my.cnf
+
