@@ -47,7 +47,7 @@ class DonationController extends BaseController {
 		try {
 
 			$this->database->beginTransaction();
-			$this->database->query("INSERT INTO donations (name, email, amount, method) VALUES ('$email', '$email', $amount, $method)");
+			$this->database->query("INSERT INTO donations (name, document,  email, amount, method) VALUES ('$email', '$document', '$email', '$amount', '$method')");
 			
 			$user = $this->database->query("SELECT * FROM users WHERE email = '$email'");
 			if (empty($user)) {
@@ -68,6 +68,8 @@ class DonationController extends BaseController {
 			'document' => $document,
 			'date' => date('Y-m-d H:i:s')
 		];
+
+		$_POST = [];
 
 		return $this->redirect("thank-you", ['info' => $info]);
 	}
