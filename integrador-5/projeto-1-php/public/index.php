@@ -20,9 +20,12 @@ try {
 
 $homeController = new \App\Controllers\HomeController();
 $donationController = new \App\Controllers\DonationController();
+$userController = new \App\Controllers\UserController();
 
 $router = new Router();
 $router->get('/', fn () => $homeController->index());
+$router->get('/signup', fn () => $userController->create());
+$router->post('/signup', fn () => $userController->store());
 $router->post('/donate', fn () => $donationController->store());
 $router->get('/donation', fn () => $donationController->index());
 

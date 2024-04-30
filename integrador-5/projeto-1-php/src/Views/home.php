@@ -41,7 +41,8 @@
 					</li>
 
 				</ul>
-				<div class="d-lg-flex col-lg-3 justify-content-lg-end">
+				<div class="d-lg-flex col-lg-4 justify-content-lg-end">
+					<a href="signup" class="btn btn-link">Criar conta</a>
 					<a href="donation" class="btn donation">Faça uma doação</a>
 				</div>
 			</div>
@@ -68,7 +69,7 @@
 				<?php foreach ($pets as $pet) : ?>
 				<div class="col-sm-6 col-md-6 col-lg-4 mb-4">
 					<div class="card">
-						<img src="./assets/Images/<?= $pet['img_name'] ?>" class="card-img-top" alt="<?= $pet['name'] ?>">
+						<img src="./assets/Images/<?= $pet['photo'] ?>" class="card-img-top" alt="<?= $pet['name'] ?>">
 						<div class="card-body">
 							<h5 class="card-title"><?= $pet['name'] ?></h5>
 							<p class="card-text"><?= $pet['description'] ?></p>

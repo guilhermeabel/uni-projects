@@ -36,7 +36,7 @@ class DonationController extends BaseController {
 		}
 
 		if (!empty($errors)) {
-			return $this->redirect("donation", ['errors' => $errors]);
+			return $this->view("donation", ['errors' => $errors]);
 		}
 
 		$email = $_POST['email'];
@@ -45,15 +45,31 @@ class DonationController extends BaseController {
 		$method = $_POST['donation-method'];
 
 		try {
-
+			# Isso deveria ser feito em uma camada de serviço, mas para o escopo do trabalho, não tem necessidade
 			$this->database->beginTransaction();
-			$this->database->query("INSERT INTO donations (name, document,  email, amount, method) VALUES ('$email', '$document', '$email', '$amount', '$method')");
-			
-			$user = $this->database->query("SELECT * FROM users WHERE email = '$email'");
+
+			$userModel = new \App\Model\User();
+			$user = $userModel->findByEmail($email);
+
 			if (empty($user)) {
-				$this->database->query("INSERT INTO users (document, name, email) VALUES ('$document', '$email', '$email')");
+				$userModel->create([
+					'email' => $email,
+					'name' => $email,
+					'document' => $document
+				]);
+
+				$user = $userModel->findByEmail($email);
 			}
 
+			$donationModel = new \App\Model\Donation();
+			$donationModel->create([
+				'email' => $email,
+				'amount' => $amount,
+				'document' => $document,
+				'method' => $method
+			]);
+			
+			
 			$this->database->commit();
 		} catch (\Exception $e) {
 			$this->database->rollBack();
@@ -71,7 +87,7 @@ class DonationController extends BaseController {
 
 		$_POST = [];
 
-		return $this->redirect("thank-you", ['info' => $info]);
+		return $this->view("thank-you", ['info' => $info]);
 	}
 
 }
